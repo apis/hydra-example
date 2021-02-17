@@ -1,0 +1,46 @@
+# ./hydra clients create \
+    --endpoint http://localhost:4445 \
+    --id test-client \
+    --secret test-secret \
+    --response-types code,id_token \
+    --token-endpoint-auth-method client_secret_post \
+    --grant-types refresh_token,authorization_code,client_credentials \
+    --scope openid,offline \
+    --callbacks http://localhost:3000/callback
+    
+# Client credentials grant    
+    
+#./hydra clients create \
+    --endpoint http://127.0.0.1:4445/ \
+    --id my-client \
+    --secret secret \
+    -g client_credentials
+    
+    
+#./hydra token client \
+    --endpoint http://127.0.0.1:4444/ \
+    --client-id my-client \
+    --client-secret secret    
+    
+#./hydra token introspect \
+    --endpoint http://127.0.0.1:4445/ \
+    UDYMha9TwsMBejEvK
+    
+# OAuth 2.0 Authorization Code Grant
+
+#./hydra clients create \
+    --endpoint http://127.0.0.1:4445 \
+    --id auth-code-client \
+    --secret secret \
+    --grant-types authorization_code,refresh_token \
+    --response-types code,id_token \
+    --scope openid,offline \
+    --callbacks http://127.0.0.1:5555/callback
+
+#./hydra token user \
+    --client-id auth-code-client \
+    --client-secret secret \
+    --endpoint http://127.0.0.1:4444/ \
+    --port 5555 \
+    --scope openid,offline
+
