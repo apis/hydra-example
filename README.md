@@ -2,17 +2,18 @@
 
 ### 1. Download latest Hydra with SQLite DB
 
-https://github.com/ory/hydra/releases/tag/v1.9.2
+https://github.com/ory/hydra/releases/
+
+Code in this repo was tested with following version:
 
 ~~~~
 hydra_1.9.2-sqlite_linux_64bit.tar.gz
-hydra_1.9.2-sqlite_windows_64bit.zip
 ~~~~
 
-### 2. Unzip archive into hydra subfolder
+### 2. Unzip hydra archive into 'hydra' subfolder
 
 
-### 3. Run migration
+### 3. Run initial migration
 
 ~~~~
 hydra/hydra migrate sql sqlite://./hydra/db.sqlite?_fk=true

@@ -9,7 +9,5 @@ export URLS_CONSENT=http://localhost:3000/consent
 #  URLS_LOGOUT=
 export URLS_SELF_ISSUER=http://localhost:4444
 export DSN=sqlite://./hydra/db.sqlite?_fk=true
-#export DSN=sqlite:///home/apis/sandbox/sandbox/hydra/bin/db.sqlite?_fk=true
 
 hydra/hydra serve all --dangerous-force-http
-
